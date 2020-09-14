@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Bundesland {
-    private static final List<Bundesland> BUNDESLAENDER = Arrays.asList(
+    public static final List<Bundesland> BUNDESLAENDER = Arrays.asList(
             new Bundesland("Oberösterreich (OÖ)","Linz",1482095,11980),
             new Bundesland("Niederösterreich (NÖ)","St. Pölten",1677542,19186),
             new Bundesland("Kärnten (Ktn.)","Klagenfurt am Wörthersee",560939,9538),
@@ -26,5 +26,21 @@ public class Bundesland {
         this.landeshauptstadt = landeshauptstadt;
         this.einwohner = einwohner;
         this.flaeche = flaeche;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLandeshauptstadt() {
+        return landeshauptstadt;
+    }
+
+    public int getEinwohner() {
+        return einwohner;
+    }
+
+    public int getFlaeche() {
+        return flaeche;
     }
 }
