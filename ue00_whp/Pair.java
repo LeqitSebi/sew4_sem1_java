@@ -1,4 +1,4 @@
-package ue01_whp;
+package ue00_whp;
 
 public class Pair {
     int n;

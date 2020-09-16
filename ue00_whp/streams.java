@@ -1,9 +1,9 @@
-package ue01_whp;
+package ue00_whp;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static ue01_whp.Bundesland.BUNDESLAENDER;
+import static ue00_whp.Bundesland.BUNDESLAENDER;
 
 public class streams {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package ue01_whp;
+package ue00_whp;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static ue01_whp.Pair.getDifference;
+import static ue00_whp.Pair.getDifference;
 
 public class Biggest_Diff {
     public static Pair getBiggestDiffernz(int[] data) {
