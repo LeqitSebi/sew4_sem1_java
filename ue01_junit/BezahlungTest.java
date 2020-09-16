@@ -15,4 +15,12 @@ class BezahlungTest {
         assertEquals(3, count("Ich liebe SEW"));
     }
 
+    @Test
+    public void normalTests(){
+        assertEquals(3, count("Ich.liebe.SEW"));
+        assertEquals(1, count(":eins:"));
+        assertEquals(1, count(":  eins  :"));
+        assertEquals(3, count(".ein erster:Text"));
+    }
+
 }
