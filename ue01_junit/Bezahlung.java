@@ -11,17 +11,11 @@ public class Bezahlung {
 
     public static int count(String s) {
         int wordcount = 0;
-        int htmlFlag = 0;
-        String[] words = s.split("[^A-z0-9<>]");
-        for (String n : words) {
-            if (n.contains("<")) {
-                htmlFlag++;
-            }
-            if (htmlFlag == 0 && n.length() != 0) {
+        s = s.replaceAll("<[^>]*>", " ");
+        String[] words = s.split("\\W");
+        for (String n:words) {
+            if (!n.equals("")){
                 wordcount++;
-            }
-            if (n.contains(">")) {
-                htmlFlag--;
             }
         }
         return wordcount;
