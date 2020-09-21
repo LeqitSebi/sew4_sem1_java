@@ -4,10 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegEx {
-    private static final Pattern validEmail = Pattern.compile("((A-z)(A-z0-9-_\\+\\.)*)@(A-z-)\\.(A-z)+(\\.)?(A-z)*");
+    private static final Pattern validEmail = Pattern.compile("([A-z][A-z0-9-_+.]*)@[A-z-]*\\.[A-z]+[.]?[A-z]*");
 
     public static void main(String[] args) {
-        System.out.println(getEmailName("sebi@slanitsch.com"));
+        System.out.println(getEmailName("sebi.slanitsch@slanitsch.com"));
     }
 
     public static String getEmailName(String addr){
