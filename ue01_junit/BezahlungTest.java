@@ -28,4 +28,8 @@ class BezahlungTest {
         assertEquals(1, count("eins <html>"));
     }
 
+    @Test
+    public void hardTest(){
+        assertEquals(2, count("eins<img alt=\\\"<bild \\\\\\\" keinwort keinwort\\\" keinwort>zwei)"));
+    }
 }
