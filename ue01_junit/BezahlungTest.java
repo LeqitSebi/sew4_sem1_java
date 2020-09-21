@@ -23,4 +23,9 @@ class BezahlungTest {
         assertEquals(3, count(".ein erster:Text"));
     }
 
+    @Test
+    public void htmlTests(){
+        assertEquals(1, count("eins <html>"));
+    }
+
 }
