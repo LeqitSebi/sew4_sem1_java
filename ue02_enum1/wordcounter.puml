@@ -1,0 +1,19 @@
+@startuml
+scale 350 width
+
+state wordcounter {
+  [*] --> OUT_WORD
+  OUT_WORD --> IN_WORD : Buchstabe/Ziffer
+  OUT_WORD --> OUT_WORD : *
+  IN_WORD --> IN_WORD : Buchstabe/Ziffer
+  IN_WORD --> OUT_WORD : *
+  OUT_WORD --> IN_TAG : '<'
+  IN_TAG --> OUT_WORD : '>'
+  IN_TAG --> IN_TAG : *
+  IN_TAG --> IN_STRING : '"'
+  IN_STRING --> IN_TAG : '"'
+  IN_STRING --> IGNORE : '\'
+  IGNORE --> IN_STRING : *
+  IN_STRING --> IN_STRING : *
+}
+@enduml

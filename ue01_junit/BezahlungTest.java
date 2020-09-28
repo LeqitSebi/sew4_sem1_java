@@ -43,7 +43,7 @@ class BezahlungTest {
 
     @Test
     public void htmlTests(){
-        assertEquals(1, count("eins <html>"));
+        assertEquals(1, count(" eins <html> "));
     }
 
     @Test
