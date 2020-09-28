@@ -10,17 +10,35 @@ class BezahlungTest {
 
     @Test
     public void easyTests(){
-        assertEquals(1, count("eins"));
-        assertEquals(1, count("eins "));
-        assertEquals(3, count("Ich liebe SEW"));
+        assertEquals(0, count(""));
+        assertEquals(0, count(" "));
+        assertEquals(0, count("   "));
     }
 
     @Test
     public void normalTests(){
-        assertEquals(3, count("Ich.liebe.SEW"));
+        assertEquals(1, count("eins"));
+        assertEquals(1, count(" eins"));
+        assertEquals(1, count("eins "));
+        assertEquals(1, count(" eins "));
+        assertEquals(1, count(" eins  "));
+        assertEquals(1, count("  eins "));
+        assertEquals(1, count("  eins  "));
+        assertEquals(1, count("eins:"));
         assertEquals(1, count(":eins:"));
-        assertEquals(1, count(":  eins  :"));
-        assertEquals(3, count(".ein erster:Text"));
+        assertEquals(1, count("eins  :   "));
+        assertEquals(1, count(":   eins  :"));
+        assertEquals(3, count("ein erster Text"));
+        assertEquals(3, count("ein     erster    Text     "));
+        assertEquals(3, count("ein:erster.Text"));
+    }
+
+    @Test
+    public void maybeWrong(){
+        assertEquals(1, count("a"));
+        assertEquals(1, count(" a"));
+        assertEquals(1, count("a "));
+        assertEquals(1, count(" a "));
     }
 
     @Test
