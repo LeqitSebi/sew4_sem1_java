@@ -15,9 +15,9 @@ public class Bezahlung_state_machine {
             char current = n.charAt(i);
             switch (activeState) {
                 case OUT_WORD:
-                    if (current == '<'){
-                     activeState = IN_TAG;
-                    } else if (Character.isDigit(current) || Character.isLetter(current)){
+                    if (current == '<') {
+                        activeState = IN_TAG;
+                    } else if (Character.isDigit(current) || Character.isLetter(current)) {
                         counter++;
                         activeState = IN_WORD;
                     }
@@ -30,23 +30,23 @@ public class Bezahlung_state_machine {
                     break;
 
                 case IN_TAG:
-                    if (current == '>'){
+                    if (current == '>') {
                         activeState = OUT_WORD;
-                    } else if (current == '\"'){
+                    } else if (current == '\"') {
                         activeState = IN_STRING;
                     }
                     break;
 
                 case IN_STRING:
-                    if (current == '\"'){
+                    if (current == '\"') {
                         activeState = IN_TAG;
-                    } else if (current == '\\'){
+                    } else if (current == '\\') {
                         activeState = IGNORE;
                     }
                     break;
 
                 case IGNORE:
-                    if (current != '\\'){
+                    if (current != '\\') {
                         activeState = IN_STRING;
                     }
                     break;
