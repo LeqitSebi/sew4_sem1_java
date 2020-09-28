@@ -2,8 +2,8 @@
 scale 350 width
 
 state wordcounter {
-  [*] --> OUT_WORD
-  OUT_WORD --> IN_WORD : Buchstabe/Ziffer
+  [*] --> OUT_WORD : counter = 0
+  OUT_WORD --> IN_WORD : Buchstabe/Ziffer, counter++
   OUT_WORD --> OUT_WORD : *
   IN_WORD --> IN_WORD : Buchstabe/Ziffer
   IN_WORD --> OUT_WORD : *
