@@ -1,4 +1,4 @@
-package ue03_enum2;
+package ue02_enum2;
 
 public class WordCount implements Increment{
     public int words;
@@ -6,7 +6,7 @@ public class WordCount implements Increment{
     public WordCount(String html){
         StateMachine currentState = StateMachine.OUT_WORD;
         for (int i = 0; i < html.length(); i++) {
-            currentState.nextState(this, html.charAt(i));
+            currentState = currentState.nextState(this, html.charAt(i));
         }
     }
 

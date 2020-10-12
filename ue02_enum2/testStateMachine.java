@@ -1,4 +1,4 @@
-package ue03_enum2;
+package ue02_enum2;
 
 public class testStateMachine {
     public static void main(String[] args) {
