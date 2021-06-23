@@ -14,7 +14,8 @@ public class ClockController implements IController {
     public static final int DEFAULT_ALARM_REPEAT_MINUTES = 4;
 
     public enum Mode {
-        NORMAL, HOUR, MINUTE, YEAR, MONTH, DATE, AL1, AL2, AL1HOUR, AL2HOUR, AL1MINUTE, AL2MINUTE, AL1REPEATS, AL2REPEATS
+        NORMAL, HOUR, MINUTE, YEAR, MONTH, DATE, AL1, AL2, AL1HOUR, AL2HOUR,
+        AL1MINUTE, AL2MINUTE, AL1REPEATS, AL2REPEATS
     }
 
     private IDisplay display;

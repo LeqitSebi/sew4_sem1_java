@@ -36,12 +36,10 @@ public class HuffmanImage {
      * @return der Integer-Wert
      */
     public static int bigEndian2int(byte[] bytes, int pos) {
-        // TODO: ersetze den folgenden Dummy-Code, so dass tatsaechlich
-        // TODO: die Breite und die Hoehe aus dem Huffman-kodierten-Bild ausgelesen wird
         if (pos == 0) {
-            return 1200; // = width (Bild-Breite)
+            return (int) Integer.toUnsignedLong((Byte.toUnsignedInt(bytes[0]) << 24) + (Byte.toUnsignedInt(bytes[1]) << 16) + (Byte.toUnsignedInt(bytes[2]) << 8) + (Byte.toUnsignedInt(bytes[3]))); // = width (Bild-Breite)
         } else {
-            return 374;  // = height (Bild-Hoehe)
+            return (int) Integer.toUnsignedLong((Byte.toUnsignedInt(bytes[4]) << 24) + (Byte.toUnsignedInt(bytes[5]) << 16) + (Byte.toUnsignedInt(bytes[6]) << 8) + (Byte.toUnsignedInt(bytes[7])));  // = height (Bild-Hoehe)
         }
     }
 
