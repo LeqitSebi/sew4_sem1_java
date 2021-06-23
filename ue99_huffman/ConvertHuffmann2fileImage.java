@@ -44,17 +44,17 @@ public class ConvertHuffmann2fileImage {
 
 
     public static void main(String[] args) throws IOException {
-        convertHuffman2fileImage("src/resources/a_01.huffman", "src/resources/a_01.png", false);
-        convertHuffman2fileImage("src/resources/a_01.huffman", "src/resources/a_01.jpeg", false);
+        convertHuffman2fileImage("../resources/b_01.huffman", "../resources/a_01.png", false);
+        convertHuffman2fileImage("../resources/b_01.huffman", "../resources/a_01.jpeg", false);
 
-        convertHuffman2fileImage("src/resources/a_01.huffman.rle", "src/resources/a_01RLE.png", true);
-        convertHuffman2fileImage("src/resources/a_01.huffman.rle", "src/resources/a_01RLE.jpeg", true);
+        convertHuffman2fileImage("../resources/b_01.huffman.rle", "../resources/a_01RLE.png", true);
+        convertHuffman2fileImage("../resources/b_01.huffman.rle", "../resources/a_01RLE.jpeg", true);
 
-        convertHuffman2fileImage("src/resources/b_01.huffman", "src/resources/b_01.png", false);
-        convertHuffman2fileImage("src/resources/b_01.huffman", "src/resources/b_01.jpeg", false);
+        convertHuffman2fileImage("../resources/b_01.huffman", "../resources/b_01.png", false);
+        convertHuffman2fileImage("../resources/b_01.huffman", "../resources/b_01.jpeg", false);
 
-        convertHuffman2fileImage("src/resources/b_01.huffman.rle", "src/resources/b_01RLE.png", true);
-        convertHuffman2fileImage("src/resources/b_01.huffman.rle", "src/resources/b_01RLE.jpeg", true);
+        convertHuffman2fileImage("../resources/b_01.huffman.rle", "../resources/b_01RLE.png", true);
+        convertHuffman2fileImage("../resources/b_01.huffman.rle", "../resources/b_01RLE.jpeg", true);
         System.out.println(ConvertHuffmann2fileImage.class.getSimpleName() + " finished");
     }
 }
