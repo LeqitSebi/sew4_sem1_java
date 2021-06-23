@@ -6,12 +6,64 @@ package ue99_huffman;
  * ein unkomprimiertes Bild umgewandelt werden
  */
 public enum Huffman {
-    // TODO: da fehlen noch jede Menge States
     START {
         @Override
         public Huffman nextState(IColor iColor, int bit) {
-            // TODO: ersetze den Dummy-Code durch etwas Vernuenftiges
-            iColor.addColor(colorCodes.getRGB("1")); // colorCodes.getRGB: Wandelt den BitCode in den RGB-Wert um
+            if (bit == 1) {
+                iColor.addColor(colorCodes.getRGB("1"));
+                return START;
+            }
+            return CODE0;
+        }
+    },
+    CODE0 {
+        @Override
+        public Huffman nextState(IColor iColor, int bit) {
+            if (bit == 1) {
+                iColor.addColor(colorCodes.getRGB("01"));
+                return START;
+            }
+            return CODE00;
+        }
+    },
+    CODE00 {
+        @Override
+        public Huffman nextState(IColor iColor, int bit) {
+            if (bit == 1) {
+                return CODE001;
+            }
+            return CODE000;
+        }
+    },
+    CODE001 {
+        @Override
+        public Huffman nextState(IColor iColor, int bit) {
+            if (bit == 1) {
+                iColor.addColor(colorCodes.getRGB("0011"));
+            } else if (bit == 0) {
+                iColor.addColor(colorCodes.getRGB("0010"));
+            }
+            return START;
+        }
+    },
+    CODE000 {
+        @Override
+        public Huffman nextState(IColor iColor, int bit) {
+            if (bit == 0) {
+                iColor.addColor(colorCodes.getRGB("0000"));
+                return START;
+            }
+            return CODE0001;
+        }
+    },
+    CODE0001 {
+        @Override
+        public Huffman nextState(IColor iColor, int bit) {
+            if (bit == 1) {
+                iColor.addColor(colorCodes.getRGB("00011"));
+            } else if (bit == 0) {
+                iColor.addColor(colorCodes.getRGB("00010"));
+            }
             return START;
         }
     };
@@ -28,7 +80,7 @@ public enum Huffman {
      *
      * @param iColor um die neue Farbe einzutragen
      * @param bit    das naechste Bit, das verarbeitet werden soll
-     * @return       der neue Zustand
+     * @return der neue Zustand
      */
     public abstract Huffman nextState(IColor iColor, int bit);
 }
